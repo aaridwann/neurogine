@@ -95,3 +95,31 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+---
+
+# Todo list
+- Inital project setup (Done) 
+- Inital Dependency Repo Feaute, Utils, Ui-kit (Done)
+    - Dependency: 
+        - Redux Toolkit (Done)
+        - React Navigation (Done)
+        - React Hook Form 
+        - React Native Reanimated 
+        - React Native Gesture Handler
+        - React Native Skia 
+        - LottieView
+        - Axios
+        - TanStack
+    - Utils
+    - UI-kit
+        - UI-Kit General Text (Done)
+        - UI-Kit Button
+        - UI-Kit Card
+        - UI-Kit List
+    - Feauture
+        - Product Detail (Done)
+        - Product List
+- Fix Linter
+- Fix Type
+- Code Coverage
