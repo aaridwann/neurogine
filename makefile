@@ -1,19 +1,18 @@
-.PHONY: yarn-all clean-ios
+.PHONY: setup clean-ios
 
-# Perintah utama
-yarn:
+setup:
 	@echo "🔄 Memulai proses reset dan instalasi..."
 	@echo "🧹 Menghapus node_modules dan file cache..."
-	rm -rf node_modules yarn.lock
+	rm -rf node_modules
 	@echo "📦 Menginstal ulang dependency dengan Yarn..."
 	yarn install
+	@echo "🩹 Menjalankan patch-package / postinstall..."
+	npx patch-package
 	$(MAKE) clean-ios
 	@echo "✅ Semua proses selesai!"
 
-# Perintah khusus untuk membersihkan dan setup iOS
 clean-ios:
 	@echo "🗑️  Menghapus build iOS dan Pods..."
-	rm -rf ios/Pods ios/Podfile.lock ios/build ~/Library/Developer/Xcode/DerivedData
+	rm -rf ios/Pods ios/Podfile.lock ios/build
 	@echo "⚙️  Menjalankan Pod Install..."
 	cd ios && pod install
-	

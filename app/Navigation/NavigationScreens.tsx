@@ -1,8 +1,10 @@
 import React from 'react';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { DetailScreens } from '@Neurogine/detail-product';
+import { CatalogProductScreens } from '@Neurogine/catalog-product';
 
 import { ScreenComponentType } from './ScreenComponent.types';
 
@@ -13,7 +15,8 @@ const Stack = createNativeStackNavigator<Record<string, object | undefined>>();
  * @returns {React.ReactNode} - List of screen configuration
  */
 const groupedScreens: ScreenComponentType[] = [
-  ...(DetailScreens as ScreenComponentType[])
+  ...(CatalogProductScreens as ScreenComponentType[]),
+  ...(DetailScreens as ScreenComponentType[]),
 ];
 
 /**

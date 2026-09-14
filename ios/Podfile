@@ -8,6 +8,7 @@ require Pod::Executable.execute_command('node', ['-p',
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
 
+
 linkage = ENV['USE_FRAMEWORKS']
 if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
@@ -19,16 +20,34 @@ target 'NeurogineAssessment' do
 
   use_react_native!(
     :path => config[:reactNativePath],
-    # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  target_pods = [
+    'AsyncStorage-AsyncStorage_resources', 
+    'react-native-safe-area-context', 
+    'react-native-screens', 
+    'lottie-ios-LottiePrivacyInfo',
+    'RNSVG-RNSVGFilters'
+  ]
+  
+  desired_deployment_target = '27.0'
 
   post_install do |installer|
     react_native_post_install(
       installer,
       config[:reactNativePath],
-      :mac_catalyst_enabled => false,
+      :mac_catalyst_enabled => false
       # :ccache_enabled => true
     )
+
+    installer.pods_project.targets.each do |target|
+      if target_pods.include?(target.name)
+        target.build_configurations.each do |config|
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = desired_deployment_target
+        end
+        puts "Updated #{target.name} IPHONEOS_DEPLOYMENT_TARGET to #{desired_deployment_target}"
+      end
+    end
   end
 end

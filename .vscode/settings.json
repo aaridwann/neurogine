@@ -1,0 +1,41 @@
+{
+  /* === 1. OTOMATISASI ESLINT ON SAVE === */
+  // Memaksa ESLint untuk memperbaiki semua rules yang bisa di-fix (termasuk urutan import, spasi, koma) saat di-save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  // Mematikan formatter bawaan JS/TS agar tidak bentrok berebut hak formatting dengan ESLint
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "TypeScriptTeam.native-preview",
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": false
+  },
+  /* === 2. OPTIMALISASI ERROR LENS (SUPER CLEAR & REALTIME) === */
+  // Menampilkan pesan error secara instan di ujung baris kode saat Anda mengetik
+  "errorLens.delay": 100,
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "warning"
+  ],
+  // Mengatur agar pesan Error Lens hanya muncul di baris yang sedang aktif atau semua baris (default: semua baris)
+  "errorLens.followCursor": false,
+  /* === 3. VISUALISASI SEGAR DAN SCANNABLE === */
+  // Menampilkan tanda batas max-len 100 karakter secara visual berupa garis vertikal tipis di editor
+  "editor.rulers": [
+    100
+  ],
+  // Memastikan whitespace/spasi yang salah terlihat samar sebagai titik-titik kecil
+  "editor.renderWhitespace": "trailing",
+  "js/ts.experimental.useTsgo": false
+}

@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       launchOptions: launchOptions
     )
 
+    window?.makeKeyAndVisible()
+
     return true
   }
 }
