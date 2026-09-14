@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		22DD776C2E444C3BAC19EF92 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6798AE382D234DD1B910F5E8 /* Colors.xcassets */; };
+		2B3CD268DFC8421798EC08B2 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13E4BFC57FBC448991F25042 /* BootSplash.storyboard */; };
 		5899CAF02E4325D71B9C6E0C /* libPods-NeurogineAssessment.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 534D5905EE36A04CAEEA6B33 /* libPods-NeurogineAssessment.a */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -19,8 +21,10 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = NeurogineAssessment/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = NeurogineAssessment/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = NeurogineAssessment/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		13E4BFC57FBC448991F25042 /* BootSplash.storyboard */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = BootSplash.storyboard; path = NeurogineAssessment/BootSplash.storyboard; sourceTree = "<group>"; };
 		4B7604EB661F85214E14E3E9 /* Pods-NeurogineAssessment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeurogineAssessment.debug.xcconfig"; path = "Target Support Files/Pods-NeurogineAssessment/Pods-NeurogineAssessment.debug.xcconfig"; sourceTree = "<group>"; };
 		534D5905EE36A04CAEEA6B33 /* libPods-NeurogineAssessment.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NeurogineAssessment.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6798AE382D234DD1B910F5E8 /* Colors.xcassets */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = NeurogineAssessment/Colors.xcassets; sourceTree = "<group>"; };
 		7193434F6266766F21BC9F3A /* Pods-NeurogineAssessment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeurogineAssessment.release.xcconfig"; path = "Target Support Files/Pods-NeurogineAssessment/Pods-NeurogineAssessment.release.xcconfig"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = NeurogineAssessment/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NeurogineAssessment/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				13E4BFC57FBC448991F25042 /* BootSplash.storyboard */,
+				6798AE382D234DD1B910F5E8 /* Colors.xcassets */,
 			);
 			name = NeurogineAssessment;
 			sourceTree = "<group>";
@@ -161,6 +167,8 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				F1146FF00D8A235E95F87BA8 /* PrivacyInfo.xcprivacy in Resources */,
+				2B3CD268DFC8421798EC08B2 /* BootSplash.storyboard in Resources */,
+				22DD776C2E444C3BAC19EF92 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

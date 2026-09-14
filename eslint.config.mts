@@ -5,6 +5,7 @@ import reactHooksPlugin from "eslint-plugin-react-hooks";
 // @ts-expect-error - eslint-plugin-react-native does not have type definitions
 import reactNativePlugin from "eslint-plugin-react-native";
 import importPlugin from "eslint-plugin-import";
+import jestPlugin from "eslint-plugin-jest";
 import globals from "globals";
 import { fixupPluginRules } from "@eslint/compat";
 
@@ -12,7 +13,6 @@ export default tseslint.config(
   {
     ignores: [
       "node_modules/**",
-      "vendor/**",
       "android/**",
       "ios/**",
       "build/**",
@@ -25,7 +25,10 @@ export default tseslint.config(
       "eslint.config.js",
       "metro.config.js",
       "babel.config.js",
-      "jest.config.js"
+      "jest.config.js",
+      "jest/**",
+      "jest.setup.js",
+      "vendor/**"
     ]
   },
 
@@ -33,6 +36,7 @@ export default tseslint.config(
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
 
+  // 1. MAIN APP CONFIGURATION
   {
     files: ["src/**/*.{ts,tsx,js,jsx}"],
     languageOptions: {
@@ -178,6 +182,36 @@ export default tseslint.config(
       "react-native/no-inline-styles": "warn",
       "react-native/no-unused-styles": "error",
       "react-native/split-platform-components": "error"
+    }
+  },
+  {
+    files: [
+      "src/**/__tests__/**/*.{ts,tsx,js,jsx}",
+      "src/**/*.{spec,test}.{ts,tsx,js,jsx}",
+      "app/**/*.{spec,test}.{ts,tsx,js,jsx}",
+      "jest.setup.js",
+      "**/__mocks__/**/*.{ts,tsx,js,jsx}"
+    ],
+    languageOptions: {
+      globals: {
+        ...globals.jest
+      }
+    },
+    plugins: {
+      "jest": jestPlugin
+    },
+    rules: {
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error",
+      "jest/no-conditional-expect": "error",
+      "jest/no-mocks-import": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+      "max-lines-per-function": "off",
+      "max-lines": "off"
     }
   }
 );
