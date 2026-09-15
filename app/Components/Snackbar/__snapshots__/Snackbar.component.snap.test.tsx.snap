@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snackbar Component renders and calls Toast.show when visible is true 1`] = `
+<View
+  config={
+    {
+      "error": [Function],
+      "info": [Function],
+      "success": [Function],
+    }
+  }
+/>
+`;
+
+exports[`Snackbar Component renders correctly when visible is false 1`] = `
+<View
+  config={
+    {
+      "error": [Function],
+      "info": [Function],
+      "success": [Function],
+    }
+  }
+/>
+`;
+
+exports[`Snackbar Component triggers hideSnackbar action when Toast onHide callback is executed 1`] = `
+<View
+  config={
+    {
+      "error": [Function],
+      "info": [Function],
+      "success": [Function],
+    }
+  }
+/>
+`;

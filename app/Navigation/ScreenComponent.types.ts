@@ -1,5 +1,6 @@
-import { ComponentType } from 'react';
-import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
+import type { ComponentType } from 'react';
+
+import type { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
 export interface ScreenComponentType {
     name: string;

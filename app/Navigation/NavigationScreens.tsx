@@ -3,10 +3,10 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { DetailScreens } from '@Neurogine/detail-product';
 import { CatalogProductScreens } from '@Neurogine/catalog-product';
+import { DetailScreens } from '@Neurogine/detail-product';
 
-import { ScreenComponentType } from './ScreenComponent.types';
+import type { ScreenComponentType } from './ScreenComponent.types';
 
 const Stack = createNativeStackNavigator<Record<string, object | undefined>>();
 
@@ -38,6 +38,6 @@ const NavigationStack = (): React.ReactNode => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default NavigationStack;

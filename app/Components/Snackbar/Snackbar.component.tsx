@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import Toast from 'react-native-toast-message';
 
-import { RootState } from '../../Redux/Reducers';
-import { hideSnackbar } from '../../Redux/Reducers/Snackbar/Snackbar.reducer';
+import Toast from 'react-native-toast-message';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { snackbarActions } from '@Neurogine/root';
+
 import { toastConfig } from './Snackbar.component.config';
+
+import type { RootState } from '../../Redux/Reducers';
 
 /**
  * Snackbar Component
@@ -12,27 +15,24 @@ import { toastConfig } from './Snackbar.component.config';
  * @returns {React.FC} - Snackbar Component
  */
 const SnackbarComponent: React.FC = () => {
-    const dispatch = useDispatch();
-    const { visible, type, title, message, duration, position } = useSelector(
-        (state: RootState) => state.snackbar
-    );
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        if (visible) {
-            Toast.show({
-                type,
-                text1: title,
-                text2: message,
-                visibilityTime: duration,
-                position,
-                onHide: () => {
-                    dispatch(hideSnackbar());
-                },
-            });
-        }
-    }, [visible, type, title, message, duration, position, dispatch]);
+  const { visible, type, title, message, duration, position } = useSelector(
+    (state: RootState) => state.snackbar,
+  );
 
-    return <Toast config={toastConfig} />;
+  useEffect(() => {
+    if (visible) {
+      Toast.show({
+        type, text1: title, text2: message, visibilityTime: duration, position,
+        onHide: () => {
+          dispatch(snackbarActions.hideSnackbar());
+        },
+      });
+    }
+  }, [visible, type, title, message, duration, position, dispatch]);
+
+  return <Toast config={toastConfig} />;
 };
 
-export default React.memo(SnackbarComponent);
+export default SnackbarComponent;

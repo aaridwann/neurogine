@@ -1,7 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import { detailProductReducer } from '@Neurogine/detail-product';
 import { catalogProductReducer } from '@Neurogine/catalog-product';
+import { detailProductReducer } from '@Neurogine/detail-product';
 import { snackbarReducer } from '@Neurogine/root';
 
 const rootReducer = combineReducers({

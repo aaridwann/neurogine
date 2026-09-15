@@ -26,19 +26,18 @@ export default tseslint.config(
       "metro.config.js",
       "babel.config.js",
       "jest.config.js",
-      "jest/**",
       "jest.setup.js",
-      "vendor/**"
+      "jest/setupFilesAfterEnv.js",
+      "__mocks__",
+      "vendor/**",
+      "**/vendor/**"
     ]
   },
-
   eslint.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
-
-  // 1. MAIN APP CONFIGURATION
   {
-    files: ["src/**/*.{ts,tsx,js,jsx}"],
+    files: ["{src,app}/**/*.{ts,tsx,js,jsx}"],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
@@ -184,11 +183,12 @@ export default tseslint.config(
       "react-native/split-platform-components": "error"
     }
   },
+
+  // 2. JEST BEST PRACTICES & TESTING OVERRIDES
   {
     files: [
       "src/**/__tests__/**/*.{ts,tsx,js,jsx}",
       "src/**/*.{spec,test}.{ts,tsx,js,jsx}",
-      "app/**/*.{spec,test}.{ts,tsx,js,jsx}",
       "jest.setup.js",
       "**/__mocks__/**/*.{ts,tsx,js,jsx}"
     ],
@@ -201,6 +201,7 @@ export default tseslint.config(
       "jest": jestPlugin
     },
     rules: {
+      // Rule Jest yang valid untuk ESLint v9/v10
       "jest/no-disabled-tests": "warn",
       "jest/no-focused-tests": "error",
       "jest/no-identical-title": "error",
@@ -208,10 +209,16 @@ export default tseslint.config(
       "jest/valid-expect": "error",
       "jest/no-conditional-expect": "error",
       "jest/no-mocks-import": "off",
+
+      // Pelonggaran Khusus Testing (Hanya membebaskan fleksibilitas mock & ukuran file test)
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "max-lines-per-function": "off",
       "max-lines": "off"
+
+      // CATATAN: Semua aturan kode dasar seperti 'indent', 'semi', 'quotes', 'comma-dangle', 
+      // 'import/order', 'max-len', dll. TETAP WARISAN & DIPAKSAKAN dari blok 1.
     }
   }
+  
 );

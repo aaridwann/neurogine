@@ -1,4 +1,4 @@
-import { ToastConfig } from "react-native-toast-message";
+import type { ToastConfig } from 'react-native-toast-message';
 
 export interface SnackbarComponentProps {
     config?: ToastConfig;

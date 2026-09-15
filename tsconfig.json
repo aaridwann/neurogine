@@ -1,28 +1,33 @@
 {
   "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "noEmitOnError": false
+  },
   "include": [
-    "**/*.ts",
-    "**/*.tsx"
+    "src/**/*",
+    "app/**/*",
+    "declarations.d.ts",
+    "jest.config.js",
+    "jest.setup.js"
   ],
   "exclude": [
-    "**/node_modules",
+    "node_modules",
+    "dist",
+    "build",
     "**/Pods"
-  ],
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    // "target": "esnext",
-    // "module": "esnext",
-    // "moduleResolution": "bundler",
-    // "outDir": "./dist",
-    // "rootDir": "./src",
-    // "noEmit": false,
-    // "allowImportingTsExtensions": false,
-    // "declaration": true,
-    // "declarationMap": true,
-    // "emitDeclarationOnly": false,
-    // "strict": true,
-    // "skipLibCheck": true,
-    // "esModuleInterop": true,
-    // "noEmitOnError": false
-  },
+  ]
 }
