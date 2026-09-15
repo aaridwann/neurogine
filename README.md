@@ -1,125 +1,124 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Neurogine Mobile Assessment - Product Catalog & Details App
 
-# Getting Started
-
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
-
-```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
-```
-
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+A production-grade React Native application engineered with a **Modular Micro-Module Architecture**. Built to simulate enterprise-level mobile development, this project decouples feature modules, core network layers, shared UI design systems, and state management into independent repositories to ensure scalability, clean boundaries, and maximum reusability.
 
 ---
 
-# Todo list
-- Inital project setup (Done) 
-- Inital Dependency Repo Feaute, Utils, Ui-kit (Done)
-    - Dependency: 
-        - Redux Toolkit (Done)
-        - React Navigation (Done)
-        - React Hook Form 
-        - React Native Reanimated 
-        - React Native Gesture Handler
-        - React Native Skia 
-        - LottieView
-        - Axios
-        - TanStack
-    - Utils
-    - UI-kit
-        - UI-Kit General Text (Done)
-        - UI-Kit Button
-        - UI-Kit Card
-        - UI-Kit List
-    - Feauture
-        - Product Detail (Done)
-        - Product List
-- Fix Linter
-- Fix Type
-- Code Coverage
+## 🏛️ Project Architecture & Module Ecosystem
+
+This application is built using a **Modular Architecture (Multi-Repository Ecosystem)**. Each layer is strictly decoupled to ensure code isolation and maintain UI/UX consistency across the entire application.
+
+### Main Application
+* **[Neurogine App](https://github.com/aaridwann/neurogine-root)**: The primary application root runner that links all feature modules, manages main navigation, and handles global state integration.
+
+### Feature Modules
+* **[neurogine-catalog-product](https://github.com/aaridwann/neurogine-catalog-product)**: Independent feature module for displaying the product catalog list (Main/First Screen).
+* **[neurogine-details-product](https://github.com/aaridwann/neurogine-details-product)**: Independent feature module for displaying detailed product information.
+
+### Core & Shared Infrastructure
+* **[neurogine-root](https://github.com/aaridwann/neurogine-root)**: Root module for general application-wide components (such as Global Snackbar/Toast, Base Providers, and shared Utilities).
+* **[neurogine-core-network](https://github.com/aaridwann/neurogine-core-network)**: Centralized Core Network Layer built on **Axios** & **TanStack Query** for API requests, caching, and error handling.
+
+### Design System / UI-Kit
+* **[neurogine-ui-kit-button](https://github.com/aaridwann/neurogine-ui-kit-button)**: Atomic UI Component specifically for Buttons to guarantee consistent interaction & design across all features.
+* **[neurogine-ui-kit-general-text](https://github.com/aaridwann/neurogine-ui-kit-general-text)**: Typography Design System for standardizing text variants, font weights, and scaling.
+
+---
+
+## 🌟 Senior-Level Engineering Highlights
+
+* **Strict Modular Separation:** Each feature exists as an independent library/module, enabling parallel team workflows and seamless codebase scaling.
+* **Automated Package & iOS Native Patching:** Automated **Makefile** integration (`yarn setup`) handles `patch-package`, native build cache clearing, and `pod install` sequentially without race conditions.
+* **State & Server Data Synchronization:** Combination of **Redux Toolkit** for internal app state and **TanStack Query (React Query)** for asynchronous server-state caching.
+* **Polished Micro-Interactions & Assets:** Enhanced with a custom **App Icon**, native **Splash Screen**, and smooth micro-animations powered by **React Native Reanimated**, **Gesture Handler**, and **Lottie Animation**.
+* **High Code Quality Standard:** Enforced strict ESLint configuration, prevented type leaks with TypeScript, and integrated unit testing via **Jest** & **React Native Testing Library**.
+
+---
+
+## 🛠️ Tech Stack & Dependencies
+
+| Category | Technologies |
+| :--- | :--- |
+| **Framework & Language** | React Native, TypeScript |
+| **Architecture** | Modular Repositories, Atomic UI Design System |
+| **State Management** | Redux Toolkit, TanStack Query (React Query) |
+| **Networking** | Axios (Centralized in `neurogine-core-network`) |
+| **Navigation** | React Navigation (Native Stack) |
+| **Animations & UI** | Reanimated, Gesture Handler, Lottie React Native |
+| **Testing & Tooling** | Jest, React Native Testing Library, ESLint, Makefile |
+
+---
+
+## 🚀 Quick Start & Installation
+
+### Prerequisites
+Ensure your React Native development environment (Xcode for iOS / Android Studio for Android) is properly configured on your system.
+
+### 1. Setup Dependencies & Native Modules
+Run this single command at the root of the project to download dependencies, apply patches, clean iOS build caches, and execute `pod install` automatically:
+
+```bash
+yarn setup
+```
+
+### 2. Build & Run App
+Open a new terminal window and run your desired target OS:
+
+OS Simulator:
+```bash
+yarn ios
+```
+OS Android:
+```bash
+yarn android
+```
+
+### 3. Start Metro Bundler (If Not Running)
+If Metro does not launch automatically, run the following command at the root of your project to start the development server:
+```bash
+yarn start
+```
+
+📊 Quality Assurance & Testing
+Bash
+# Run Unit Tests
+yarn test
+
+# Generate Test Coverage Report
+yarn test --coverage
+
+# Run Linter
+yarn lint
+
+# TypeScript Verification / Build Check
+yarn build
+
+## 📋 Project Roadmap & Todo List
+Completed Features & Enhancements
+* Initial project setup & Multi-Repo modularization
+
+* Integration of Redux Toolkit & React Navigation
+
+* Integration of React Native Reanimated & Gesture Handler
+
+* Integration of Lottie Animation for micro-interactions
+
+* Centralized Networking with Axios & TanStack Query
+
+* UI-Kit Implementation (General Text & Button System)
+
+* Feature Implementation: Product List & Product Details
+
+* Custom Native App Icon & Native Splash Screen
+
+* Automated Setup via Makefile (yarn setup)
+
+## 📋 Ongoing & Upcoming Tasks
+- **Shared Navigation & Route Module**: Centralize navigation routes, action types, and constants across feature modules
+-  **Fix Types**: Reduce remaining Type Warnings/Any to < 20%
+- **Increase Test Coverage**: Elevate unit test coverage from 80% to > 90%
+- **Environment Module**: Implement .env module for dynamic API Base URL parameterization & App Configurations
+- **Configuration Layer**: Centralize app-wide configuration constants
+
+
+Designed & Developed for Neurogine Mobile Engineer Assessment by Ridwan Firmansyah.
