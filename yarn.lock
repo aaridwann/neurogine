@@ -5054,6 +5054,7 @@ __metadata:
     react-native: "npm:^0.87.1"
     react-native-bootsplash: "npm:^7.3.2"
     react-native-gesture-handler: "npm:^3.3.0"
+    react-native-linear-gradient: "npm:^2.8.3"
     react-native-reanimated: "npm:^4.6.0"
     react-native-safe-area-context: "npm:^5.9.1"
     react-native-screens: "npm:^4.27.0"
@@ -11710,6 +11711,16 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 10c0/28cebd5f1f3632864ff5e342278721d1e5e38627ae73859a8814012116ef15c629fee7137a6c9c97bb05d94bbe639b0b47e69b36fc2735ab53ed31570140663f
+  languageName: node
+  linkType: hard
+
+"react-native-linear-gradient@npm:^2.8.3":
+  version: 2.8.3
+  resolution: "react-native-linear-gradient@npm:2.8.3"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 10c0/cd41bf28e9f468173f1e5e768685128ebf8bbf9077710e43b63482c1a76f37bff8ab3d1d6adfd7b4d54e648672356c02bea46c47cdbdb1844ebe5c5caf720114
   languageName: node
   linkType: hard
 
